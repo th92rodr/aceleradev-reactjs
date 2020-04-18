@@ -1,10 +1,13 @@
-@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css);
-@import url(https://fonts.googleapis.com/css?family=Montserrat:400, 700);
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
+
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
   padding: 0;
-  width: 100vw;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -16,9 +19,10 @@ body {
   flex-direction: column;
   justify-content: space-between;
   padding: 20px;
-  background-image: url(./imgs/capa-madmax.jpg);
+  background-image: url(./imgs/capa-joker.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 #hero::after {
   content: "";
@@ -41,9 +45,11 @@ body {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin: 1%;
-  padding: 0%;
   z-index: 2;
+  padding: 0%;
+  margin: 0 auto;
+  position: relative;
+  width: 960px;
 }
 
 #hero-menu #logo {
@@ -85,12 +91,13 @@ body {
 #hero-menu #hero-profile #profile-photo {
   width: 45px;
   height: 45px;
+  border-radius: 100%;
+  overflow: hidden;
   margin-right: 20px;
 }
 #hero-menu #hero-profile #profile-photo img {
   width: 100%;
   height: auto;
-  border-radius: 100%;
 }
 #hero-menu #hero-profile p {
   color: #fff;
@@ -102,6 +109,9 @@ body {
 #hero-main {
   width: 100%;
   z-index: 2;
+  position: relative;
+  width: 960px;
+  margin: 0 auto;
 }
 
 #hero-main #hero-title {
@@ -140,9 +150,10 @@ body {
   background-color: #e4bb23;
   border-radius: 40px;
   border: none;
+  padding: 15px 50px;
   color: #000;
-  padding: 15px 35px;
   font-size: 16px;
+  text-decoration: none;
 }
 #hero-main #hero-trailer-button i {
   margin-left: 10px;
@@ -155,6 +166,7 @@ body {
 #hero-main #hero-info {
   font-size: 14px;
   color: #fff;
+  padding: 20px 0;
 }
 #hero-main #hero-info-date {
   color: #bc9a1d;
@@ -166,24 +178,194 @@ body {
   margin: 0;
 }
 
-#catalog #menu-list {
+#catalog #catalog-menu {
+  width: 100%;
+}
+#catalog-menu #menu-list {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   list-style: none;
+  margin: 0 auto;
+  padding: 0 20px;
 }
-#catalog #menu-list li {
+#catalog-menu #menu-list li {
   margin: 0 20px;
   padding: 25px 0;
 }
-#catalog #menu-list a {
+#catalog-menu #menu-list a {
   color: #e4bb23;
   font-size: 13px;
   font-weight: bold;
   text-decoration: none;
   text-transform: uppercase;
 }
-#catalog #menu-list a:hover {
+#catalog-menu #menu-list a:hover {
   box-shadow: inset 0 -1px 0 #e4bb23;
+}
+
+#catalog #catalog-movies {
+  position: relative;
+  margin: 0 auto;
+  width: 960px;
+}
+
+#movies-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  padding: 20px 0;
+}
+#movies-list .movies-item {
+  display: flex;
+  flex-direction: column;
+  width: 24%;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+#movies-list .movies-item .movie-poster {
+  margin: 0;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+}
+#movies-list .movies-item .movie-poster img {
+  width: 100%;
+  height: auto;
+}
+#movies-list .movies-item .movie-poster .movie-poster-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  padding: 80px 20px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+  visibility: hidden;
+}
+#movies-list .movies-item .movie-poster .movie-poster-info h3 {
+  color: #e4bb23;
+  font-size: 2em;
+  line-height: 1em;
+  text-transform: uppercase;
+}
+#movies-list .movies-item .movie-poster .movie-poster-info .movie-poster-link {
+  color: #fff;
+  font-size: 50px;
+}
+#movies-list
+  .movies-item
+  .movie-poster
+  .movie-poster-info
+  .movie-poster-link:hover {
+  color: #e4bb23;
+}
+
+#movies-list .movies-item:hover .movie-poster-info {
+  opacity: 1;
+  visibility: visible;
+}
+
+#movies-list .movies-item .movie-synopsis {
+  width: 100%;
+  padding: 10px;
+}
+#movies-list .movies-item .movie-synopsis h3 {
+  margin: 0;
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+#movies-list .movies-item .movie-synopsis .movie-synopsis-genre {
+  display: flex;
+  margin: 10px 0;
+}
+#movies-list .movies-item .movie-synopsis .movie-synopsis-genre a {
+  font-size: 12px;
+  color: #e4bb23;
+  text-decoration: none;
+}
+#movies-list .movies-item .movie-synopsis .movie-synopsis-genre a:hover {
+  text-decoration: underline;
+}
+
+#movies-list .movies-item .movie-synopsis .movie-score {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+#movies-list .movies-item .movie-synopsis .movie-score i {
+  color: #ccc;
+  cursor: pointer;
+}
+#movies-list .movies-item .movie-synopsis .movie-score i:hover {
+  color: #e74c3c;
+}
+
+footer {
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
+  background-color: #fff;
+  color: #bababa;
+}
+footer #footer-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  position: relative;
+  width: 960px;
+}
+footer img {
+  border: none;
+}
+footer ul {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  list-style: none;
+}
+footer li {
+  margin: 0 20px;
+}
+footer li:last-child {
+  margin-right: 0;
+}
+footer ul a {
+  font-size: 25px;
+  color: #bababa;
+  text-decoration: none;
+}
+footer ul #twitter-icon:hover {
+  color: #55acee;
+}
+footer ul #facebook-icon:hover {
+  color: #3b5998;
+}
+footer ul #instagram-icon:hover {
+  color: #e95950;
 }
