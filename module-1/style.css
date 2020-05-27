@@ -1,5 +1,5 @@
-@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css";
-@import "https://fonts.googleapis.com/css?family=Montserrat:400,700";
+@import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css';
+@import 'https://fonts.googleapis.com/css?family=Montserrat:400,700';
 
 :root {
   --white: #fff;
@@ -19,7 +19,7 @@
 }
 
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 a {
@@ -45,7 +45,7 @@ ul {
   background-attachment: fixed;
 }
 #hero::after {
-  content: "";
+  content: '';
   background: linear-gradient(
     0deg,
     rgba(0, 0, 0, 0.6) 0%,
