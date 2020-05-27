@@ -1,0 +1,21 @@
+{
+  "name": "aceleradev-reactjs",
+  "version": "1.0.0",
+  "description": "Codenation - Aceleradev React.js",
+  "main": "",
+  "scripts": {
+    "format": "npx prettier --config .prettierrc.js --write '**/*.+(js|css|html|scss)'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Thiago92Rodrigues/aceleradev-reactjs.git"
+  },
+  "keywords": [],
+  "author": "Thiago Rodrigues",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Thiago92Rodrigues/aceleradev-reactjs/issues"
+  },
+  "homepage": "https://github.com/Thiago92Rodrigues/aceleradev-reactjs#readme"
+}
