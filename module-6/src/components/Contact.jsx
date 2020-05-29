@@ -1,14 +1,6 @@
 import React from 'react';
 
-const Contact = ({
-  name,
-  avatar,
-  company,
-  department,
-  admissionDate,
-  phone,
-  country
-}) => {
+const Contact = ({ data }) => {
   const formatDate = new Intl.DateTimeFormat('pt-BR', {
     year: 'numeric',
     month: '2-digit',
@@ -20,19 +12,19 @@ const Contact = ({
     { value: dd },
     ,
     { value: yyyy }
-  ] = formatDate.formatToParts(new Date(admissionDate));
+  ] = formatDate.formatToParts(new Date(data.admissionDate));
 
   return (
     <article className='contact'>
       <span className='contact__avatar'>
-        <img src={avatar} alt='' />
+        <img src={data.avatar} alt='' />
       </span>
-      <span className='contact__data'>{name}</span>
-      <span className='contact__data'>{phone}</span>
-      <span className='contact__data'>{country}</span>
+      <span className='contact__data'>{data.name}</span>
+      <span className='contact__data'>{data.phone}</span>
+      <span className='contact__data'>{data.country}</span>
       <span className='contact__data'>{`${dd}/${mm}/${yyyy}`}</span>
-      <span className='contact__data'>{company}</span>
-      <span className='contact__data'>{department}</span>
+      <span className='contact__data'>{data.company}</span>
+      <span className='contact__data'>{data.department}</span>
     </article>
   );
 };
