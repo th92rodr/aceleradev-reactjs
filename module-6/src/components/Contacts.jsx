@@ -14,8 +14,8 @@ const Contacts = ({ contacts }) => {
           <span className='contact__data'>Empresa</span>
           <span className='contact__data'>Departamento</span>
         </article>
-        {contacts?.map(({ id, ...props }) => (
-          <Contact key={id} {...props} />
+        {contacts?.map(contact => (
+          <Contact key={contact.id} data={contact.data} />
         ))}
       </section>
     </div>
