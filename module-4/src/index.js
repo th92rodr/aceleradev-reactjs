@@ -7,7 +7,7 @@ function getTotalPrice(products) {
 function getTotalPriceWithDiscount(products, promotionType) {
   return products.reduce((acc, current) => {
     let priceWithDiscount = current.promotions.find(p =>
-      p.looks.includes(promotionType)
+      p.looks.includes(promotionType),
     );
     if (priceWithDiscount != undefined) {
       return parseFloat((acc + priceWithDiscount.price).toFixed(2));
@@ -47,7 +47,7 @@ function prepareProductsResponse(products) {
   return products.map(p => {
     return {
       name: p.name,
-      category: p.category
+      category: p.category,
     };
   });
 }
@@ -61,7 +61,7 @@ function getShoppingCart(ids, productsList) {
 
   const totalWithDiscount = getTotalPriceWithDiscount(
     selectedProducts,
-    promotionType
+    promotionType,
   );
 
   const discountValueStr = (total - totalWithDiscount).toFixed(2);
@@ -76,7 +76,7 @@ function getShoppingCart(ids, productsList) {
     promotion: promotionType,
     totalPrice: totalWithDiscount.toString(),
     discountValue: discountValueStr,
-    discount: discountPercentage
+    discount: discountPercentage,
   };
 }
 
