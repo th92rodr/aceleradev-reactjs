@@ -5,8 +5,8 @@ module.exports = {
       'jest-junit',
       {
         includeConsoleOutput: true,
-        outputName: 'output.xml'
-      }
-    ]
-  ]
+        outputName: 'output.xml',
+      },
+    ],
+  ],
 };
