@@ -1,14 +1,13 @@
 {
   "name": "module-4",
   "version": "1.0.0",
-  "description": "",
+  "author": "Thiago Rodrigues",
+  "license": "ISC",
   "main": "src/index.js",
   "scripts": {
     "test": "jest test/index.test.js",
     "test:watch": "jest test/index.test.js --watch"
   },
-  "author": "Thiago Rodrigues",
-  "license": "ISC",
   "devDependencies": {
     "jest-junit": "^10.0.0"
   }
